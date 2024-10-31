@@ -5,11 +5,11 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: default
+    namespace: dev-app
     server: https://kubernetes.default.svc
   project: default
   source:
     path: argocd/hello-k8s-manifest
-    repoURL: https://github.com/kienle1819/K8s-CICD.git
+    repoURL: https://github.com/vanphuoc9/K8S-CICD.git
     targetRevision: HEAD
   syncPolicy: {}
