@@ -4,7 +4,7 @@ metadata:
   labels:
     app: hello-k8s
   name: hello-k8s
-  namespace: default 
+  namespace: dev-app 
 spec:
   replicas: 3
   selector:

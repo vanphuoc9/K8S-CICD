@@ -2,16 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-k8s-ingress
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod-argocd"
-    kubernetes.io/ingress.class: "nginx"
+  namespace: dev-app
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
-    - hello-k8s.vuihoctech.com
+    - hello.reb.com
     secretName: hello-k8s-tls
   rules:
-    - host: hello-k8s.vuihoctech.com
+    - host: hello.reb.com
       http:
         paths:
           - pathType: Prefix
