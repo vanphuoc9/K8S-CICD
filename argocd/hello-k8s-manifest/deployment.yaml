@@ -6,15 +6,10 @@ metadata:
   name: hello-k8s
   namespace: dev-app 
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hello-k8s
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -26,7 +21,4 @@ spec:
         name: hello-k8s
         ports:
         - containerPort: 5000
-        resources:
-          requests:
-            cpu: 50m
-            memory: 256Mi
+        
